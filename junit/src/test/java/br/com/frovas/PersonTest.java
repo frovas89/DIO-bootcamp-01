@@ -8,8 +8,17 @@ import java.time.LocalDate;
 public class PersonTest {
 
     @Test
-    void validateAgeCalc() {
-        Person person = new Person("Frovas", LocalDate.of(1989, 3, 24));
-        Assertions.assertEquals(35, person.getAge());
+    void shouldReturnCorrectAge() {
+        Person frovas = new Person("Frovas", LocalDate.of(1989, 3, 24));
+        Assertions.assertEquals(35, frovas.getAge());
+    }
+
+    @Test
+    void shouldReturnIfIsOfLegalAge() {
+        Person frovas = new Person("Frovas", LocalDate.of(1989, 3, 24));
+        Assertions.assertTrue(frovas.isOfLegalAge());
+
+        Person joao = new Person("Joao", LocalDate.now());
+        Assertions.assertFalse(joao.isOfLegalAge());
     }
 }

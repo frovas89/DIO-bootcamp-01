@@ -24,4 +24,8 @@ public class Person {
     public int getAge() {
         return (int) ChronoUnit.YEARS.between(this.birthday, LocalDate.now());
     }
+
+    public boolean isOfLegalAge() {
+        return getAge() >= 18;
+    }
 }
