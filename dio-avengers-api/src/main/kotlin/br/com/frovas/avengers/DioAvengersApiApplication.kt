@@ -1,4 +1,4 @@
-package br.com.frovas.dio_avengers_api
+package br.com.frovas.avengers
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
