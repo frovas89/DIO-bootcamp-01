@@ -24,7 +24,7 @@ class AvengerResource (
             ResponseEntity.ok().body(it)
         }
 
-    @GetMapping("{id}")
+    @GetMapping("{id}/detail")
     fun getAvengers(@PathVariable("id") id: Long) =
         repository.getDetail(id)?.let { avenger ->
             ResponseEntity.ok().body(AvengerResponse.from(avenger))
