@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.net.URI
 
-private const val API_PATH = "/vi/api/avenger"
+private const val API_PATH = "/v1/api/avenger"
 
 @RestController
 @RequestMapping(value = [API_PATH])
@@ -49,7 +49,7 @@ class AvengerResource (
             }
         } ?: ResponseEntity.notFound().build<Void>()
 
-    @DeleteMapping("{id")
+    @DeleteMapping("{id}")
     fun deleteAvenger(@PathVariable("id") id: Long) =
         repository.delete(id).let {
             ResponseEntity.accepted().build<Void>()
